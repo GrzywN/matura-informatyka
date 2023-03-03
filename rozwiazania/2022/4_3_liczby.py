@@ -18,7 +18,7 @@ def piatka(u, w, x, y, z):
 
 # print(trojka(2, 6, 12))
 # print(trojka(2, 10, 12))
-
+# print(piatka(2, 4, 8, 16, 48))
 liczby = open("przyklad.txt", "r").read().split("\n")[:-1]
 
 for i in range(len(liczby)):
@@ -80,6 +80,9 @@ while True:
 
     czy_piatka = piatka(u, w, x, y, z)
 
+    # if u == 13 and w == 26 and x == 52:
+    print(u,w,x,y,z)
+
     if czy_piatka:
         piatki.append((u, w, x, y, z))
 
@@ -99,7 +102,7 @@ while True:
         trzeci_wsk = drugi_wsk + 1
         czwarty_wsk = trzeci_wsk + 1
         piaty_wsk = czwarty_wsk + 1
-    elif trzeci_wsk < len(liczby) - 3:
+    elif trzeci_wsk < len(liczby) - 2:
         trzeci_wsk += 1
     elif drugi_wsk == len(liczby) - 5:
         pierwszy_wsk += 1
