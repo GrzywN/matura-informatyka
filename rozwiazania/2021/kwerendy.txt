@@ -1,0 +1,27 @@
+6.1
+CREATE VIEW zadanie_6_1 AS SELECT kraj, COUNT(id_gracza) FROM `gracze_txt` WHERE YEAR(data_dolaczenia) = 2018 GROUP BY kraj ORDER BY COUNT(id_gracza) DESC LIMIT 5;
+
+6.2
+CREATE VIEW zadanie_6_2 AS SELECT jednostki_txt.nazwa, SUM(klasy_txt.strzal) FROM jednostki_txt JOIN klasy_txt ON jednostki_txt.nazwa = klasy_txt.nazwa WHERE jednostki_txt.nazwa LIKE "%elf%" GROUP BY jednostki_txt.nazwa;
+
+6.3
+CREATE VIEW zadanie_6_3 AS SELECT id_gracza FROM jednostki_txt WHERE id_gracza NOT IN (SELECT id_gracza FROM jednostki_txt WHERE nazwa = "Artylerzysta") GROUP BY id_gracza ORDER BY id_gracza ASC;
+
+6.4
+CREATE VIEW zadanie_6_4 AS SELECT klasy_txt.nazwa, COUNT(*) FROM jednostki_txt JOIN klasy_txt ON jednostki_txt.nazwa = klasy_txt.nazwa WHERE ABS(100 - lok_x) + ABS(100 - lok_y) <= klasy_txt.szybkosc GROUP BY klasy_txt.nazwa;
+
+6.5
+Jednostki według lokalizacji
+CREATE VIEW jednostki_wedlug_lokalizacji AS SELECT lok_x, lok_y, id_gracza, COUNT(*) AS liczba_jednostek FROM jednostki_txt GROUP BY lok_x, lok_y, id_gracza;
+
+Wszystkie bitwy
+CREATE VIEW wszystkie_bitwy AS SELECT lok_x, lok_y, COUNT(*) AS liczba_jednostek FROM jednostki_wedlug_lokalizacji GROUP BY lok_x, lok_y HAVING COUNT(*) > 1;
+
+Bitwy tylko polskie (do wykluczenia)
+CREATE VIEW bitwy_polskie AS SELECT lok_x, lok_y, kraj, COUNT(*) AS liczba_jednostek FROM jednostki_wedlug_lokalizacji JOIN gracze_txt ON gracze_txt.id_gracza = jednostki_wedlug_lokalizacji.id_gracza WHERE kraj LIKE "Polska" GROUP BY lok_x, lok_y, kraj HAVING COUNT(*) > 1;
+
+Ile bitew tylko polskich (bratobójczych) do wykluczenia
+CREATE VIEW ile_bitew_bratobojczych_do_wykluczenia AS SELECT COUNT(*) FROM bitwy_polskie;
+
+a) CREATE VIEW zadanie_6_5a AS SELECT COUNT(*) FROM wszystkie_bitwy;
+b) CREATE VIEW zadanie_6_5b AS SELECT COUNT(*) as bitwy_polakow FROM (jednostki_txt INNER JOIN gracze_txt ON jednostki_txt.id_gracza = gracze_txt.id_gracza) INNER JOIN wszystkie_bitwy ON (jednostki_txt.lok_y = wszystkie_bitwy.lok_y) AND (jednostki_txt.lok_x = wszystkie_bitwy.lok_x) WHERE kraj LIKE "Polska"; 
