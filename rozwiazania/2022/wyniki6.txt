@@ -1,0 +1,20 @@
+6.1
+Ile dziewcząt
+133
+
+6.2
+Dzień wejścia	Liczba wejść w danym dniu
+4	233
+5	299
+6	132
+7	265
+
+6.3
+Imie	Nazwisko	Czas na terenie szkoły
+Zuzanna	Adamczyk	2,65138888888032
+Szymon	Dabrowski	2,51597222224518
+Marika	Kossakowska	2,29374999999709
+
+6.4
+
+SELECT Imie, Nazwisko, Wejscie FROM KW2 WHERE Wejscie NOT EXISTS (SELECT Imie, Nazwisko, Wejscie FROM (SELECT Imie, Nazwisko, Wejscie FROM KW2 GROUP BY DAY(Wejscie), Imie, Nazwisko, Wejscie HAVING DAY(Wejscie) = 6 AND MONTH(Wejscie) = 4 AND YEAR(Wejscie) = 2022) as T1 GROUP BY Imie, Nazwisko, Wejscie);
