@@ -1,9 +1,9 @@
-liczby = open("liczby.txt", "r").read().split('\n')
-# liczby = open("przyklad.txt", "r").read().split('\n')
+# plik = open("liczby.txt", "r")
+plik = open('przyklad.txt', 'r')
+
+liczby = plik.read().split('\n')
 ile_pierwsza_ostatnia = 0
 liczba_pierwsza_ostatnia = None
-
-print(liczby[len(liczby) - 1])
 
 for liczba in liczby:
     if liczba == "":
@@ -11,7 +11,9 @@ for liczba in liczby:
     if liczba[0] == liczba[len(liczba) - 1]:
         ile_pierwsza_ostatnia += 1
 
-        if liczba_pierwsza_ostatnia == None:
+        if liczba_pierwsza_ostatnia is None:
             liczba_pierwsza_ostatnia = liczba
 
 print(ile_pierwsza_ostatnia, liczba_pierwsza_ostatnia)
+
+plik.close()

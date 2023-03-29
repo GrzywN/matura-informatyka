@@ -16,8 +16,9 @@ def czynniki_pierwsze(liczba):
     return informacje_o_liczbie
 
 
-liczby = open("liczby.txt", "r").read().split('\n')
-# liczby = open("przyklad.txt", "r").read().split('\n')
+# plik = open('liczby.txt', 'r')
+plik = open('przyklad.txt', 'r')
+liczby = plik.read().split('\n')
 
 informacje_o_liczbach = {}
 
@@ -46,3 +47,5 @@ for liczba, informacje_o_liczbie in informacje_o_liczbach.items():
         max_roznych_czynnikow = ile_roznych_czynnikow
 
 print(liczba_max_czynnikow, max_czynnikow, liczba_max_roznych_czynnikow, max_roznych_czynnikow)
+
+plik.close()
