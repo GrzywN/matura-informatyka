@@ -1,0 +1,6 @@
+KOD_REGIONU;NAZWA
+A;Redania
+B;Temeria
+C;Rivia
+D;Cintra
+E;Scellige

@@ -1,0 +1,49 @@
+KOD_TOWARU;NAZWA;KOLOR;CENA
+t1;ró¿a Mounte Shasta;bia³y;4,5
+t2;ró¿a Pascali;bia³y;4,2
+t3;ró¿a Papst Jan XIII;bia³y;6
+t4;ró¿a Mrs. Lincoln;czerwony;4,3
+t5;ró¿a Dame do Coeur;czerwony;4,7
+t6;ró¿a Papa Meilland;czerwony;4,8
+t7;ró¿a Blue Moon;fioletowy;4,5
+t8;ró¿a Charles de Gaulle;fioletowy;4,7
+t9;ró¿a Ave Maria;pomarañczowy;4,3
+t10;ró¿a Flora Danica;pomarañczowy;4,9
+t11;ró¿a Lady;pomarañczowy;5,2
+t12;ró¿a Peace;¿ó³ty;4,7
+t13;ró¿a Casanova;¿ó³ty;5,5
+t14;ró¿a Landora;¿ó³ty;6,3
+t15;goŸdzik kropkowany  Splendens;bia³o-czerwony;3,9
+t16;goŸdzik pierzasty Diamont;czerwony;3,6
+t17;goŸdzik pierzasty Munot;ró¿owy;3,8
+t18;goŸdzik postrzêpiony Angel of Desire;czerwony;4,2
+t19;goŸdzik postrzêpiony Heidi;czerwony;4,3
+t20;anthurium Care;czerwony;100
+t21;anthurium Prune;ró¿owy;100
+t22;chryzantema ma³a;bia³y;5
+t23;chryzantema ma³a;czerwony;5
+t24;chryzantema ma³a;¿ó³ty;5
+t25;chryzantema ma³a;ró¿owy;5
+t26;chryzantema ma³a;fioletowy;5
+t27;chryzantema du¿a;czerwony;7
+t28;chryzantema du¿a;¿ó³ty;7
+t29;chryzantema du¿a;fioletowy;7
+t30;chryzantema du¿a;bia³y;7
+t31;chryzantema du¿a;ró¿owy;7
+t32;lilia Kent;bia³y;4,5
+t33;lilia Red Highland;czerwony;4,5
+t34;lilia Pink Tiger;ró¿owy;4,5
+t35;lilia Yellow;¿ó³ty;4,5
+t36;lilia Orange;pomarañczowy;4,5
+t37;gerbera Albino;bia³y;5,1
+t38;gerbera Bison;pomarañczowy;5
+t39;gerbera Black Tie;czerwony;5,1
+t40;gerbera Cafe;kremowy;5,2
+t41;gerbera Cookies'n'Cream;kremowy;5,2
+t42;gerbera Cupcake;ró¿owy;5
+t43;gerbera Capri;ró¿owy;5
+t44;gerbera Goldy;pomarañczowy;5
+t45;gerbera Bison Blond;¿ó³ty;5,1
+t46;gerbera Wakita;¿ó³ty;4,9
+t47;gerbera White Star;bia³y;4,8
+t48;gerbera Nacho;pomarañczowy;5,1

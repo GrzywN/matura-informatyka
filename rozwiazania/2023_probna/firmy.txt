@@ -1,0 +1,15 @@
+KOD_ROLNIKA;NAZWA;KOD_REGIONU
+R1;Przedsiêbiorstwo Rolnicze Stokrotka;A
+R2;Przedsiêbiorstwo Rolnicze Bratek;B
+R3;Przedsiêbiorstwo Rolnicze Sadzonka ;C
+R4;Przedsiêbiorstwo Rolnicze Skawarek;D
+R5;Przedsiêbiorstwo Rolnicze S³onecznik;E
+R6;Przedsiêbiorstwo Rolnicze B³awatek;A
+R7;Przedsiêbiorstwo Rolnicze Borówka;B
+R8;Przedsiêbiorstwo Rolnicze Ró¿a;C
+R9;Przedsiêbiorstwo Rolnicze Fiolek;D
+R10;Przedsiêbiorstwo Rolnicze Orchidea;E
+R11;Przedsiêbiorstwo Rolnicze Fikus;A
+R12;Przedsiêbiorstwo Rolnicze Karambola;B
+R13;Przedsiêbiorstwo Rolnicze Sasanka;C
+R14;Przedsiêbiorstwo Rolnicze Przebiœnieg;D
