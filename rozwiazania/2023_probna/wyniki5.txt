@@ -1,0 +1,33 @@
+5.1
+Przedsiębiorstwo Rolnicze Słonecznik
+
+5.2
+NAZWA 		KOLOR 	
+anthurium Care	czerwony
+anthurium Prune	różowy
+
+5.3
+NAZWA_FIRMY				ZYSKI	MIESIAC 	
+Przedsiębiorstwo Rolnicze Sadzonka	32600	01
+Przedsiębiorstwo Rolnicze Róża		27600	02
+Przedsiębiorstwo Rolnicze Sasanka	29700	03
+Przedsiębiorstwo Rolnicze Orchidea	18000	04
+Przedsiębiorstwo Rolnicze Orchidea	17900	05
+Przedsiębiorstwo Rolnicze Sasanka	19150	06
+Przedsiębiorstwo Rolnicze Sadzonka	18350	07
+Przedsiębiorstwo Rolnicze Sadzonka	22400	08
+Przedsiębiorstwo Rolnicze Orchidea	39950	09
+Przedsiębiorstwo Rolnicze Sadzonka	17950	10
+Przedsiębiorstwo Rolnicze Orchidea	37300	11
+Przedsiębiorstwo Rolnicze Sadzonka	20450	12
+
+5.4
+Przedsiębiorstwo Rolnicze Sasanka
+
+5.5
+NAZWA_REGIONU		NAZWA_TOWARU 	
+Cintra 			gerbera Bison Blond
+Redania			goździk pierzasty Munot
+Rivia			lilia Red Highland
+Scellige		gerbera Cookies'n'Cream
+Temeria			róża Casanova

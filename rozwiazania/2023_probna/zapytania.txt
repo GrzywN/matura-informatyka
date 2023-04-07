@@ -1,0 +1,104 @@
+ALTER TABLE `dostawy` CHANGE `DATA` `DATA` DATE NULL DEFAULT NULL; 
+
+CREATE VIEW PolaczoneTabele AS (
+    SELECT
+    	DATA,
+    	ILOSC,
+    	dostawy.KOD_ROLNIKA,
+    	dostawy.KOD_TOWARU,
+    	firmy.KOD_REGIONU AS KOD_REGIONU,
+    	firmy.NAZWA AS NAZWA_FIRMY,
+    	regiony.NAZWA AS NAZWA_REGIONU,
+    	CENA,
+    	KOLOR,
+    	towary.NAZWA AS NAZWA_TOWARU
+    FROM regiony
+    LEFT JOIN firmy
+    ON regiony.KOD_REGIONU = firmy.KOD_REGIONU
+    LEFT JOIN dostawy ON dostawy.KOD_ROLNIKA = firmy.KOD_ROLNIKA
+    LEFT JOIN towary ON dostawy.KOD_TOWARU = towary.KOD_TOWARU
+);
+
+5.1
+SELECT
+	NAZWA_FIRMY,
+	COUNT(*) AS ILE_SPRZEDANYCH_ROZ
+FROM `polaczonetabele`
+WHERE KOLOR LIKE 'Czerwony' AND NAZWA_TOWARU LIKE 'R??a%'
+GROUP BY KOD_ROLNIKA;
+
+5.2
+SELECT
+	NAZWA,
+	KOLOR
+FROM towary
+WHERE towary.KOD_TOWARU NOT IN (
+	SELECT dostawy.KOD_TOWARU
+	FROM towary
+	RIGHT JOIN dostawy
+	ON towary.KOD_TOWARU = dostawy.KOD_TOWARU
+);
+
+5.3
+SELECT
+    NAZWA_FIRMY,
+    ZYSKI,
+    MIESIAC
+FROM
+    (
+    SELECT
+        firmy.NAZWA AS NAZWA_FIRMY,
+        SUM(CENA * ILOSC) AS ZYSKI,
+        SUBSTR(DATA, 4, 2) AS MIESIAC
+    FROM
+        firmy
+    JOIN dostawy ON dostawy.KOD_ROLNIKA = firmy.KOD_ROLNIKA
+    JOIN towary ON towary.KOD_TOWARU = dostawy.KOD_TOWARU
+    GROUP BY
+        NAZWA_FIRMY,
+        MIESIAC
+    ORDER BY
+        ZYSKI
+    DESC, NAZWA_FIRMY ASC
+) AS T1 GROUP BY MIESIAC;
+
+5.4
+SELECT
+    firmy.NAZWA AS NAZWA_FIRMY,
+    SUM(ILOSC)
+FROM
+    firmy
+JOIN dostawy ON dostawy.KOD_ROLNIKA = firmy.KOD_ROLNIKA
+JOIN towary ON towary.KOD_TOWARU = dostawy.KOD_TOWARU
+WHERE
+    towary.NAZWA LIKE 'chryzantema%'
+GROUP BY
+    NAZWA_FIRMY
+ORDER BY
+    SUM(ILOSC)
+DESC
+    ,
+    NAZWA_FIRMY ASC
+LIMIT 1;
+
+5.5
+SELECT
+    NAZWA_REGIONU,
+    NAZWA_TOWARU
+FROM
+    (
+    SELECT
+        NAZWA_REGIONU,
+        NAZWA_TOWARU,
+        COUNT(*)
+    FROM
+        polaczonetabele
+    GROUP BY
+        KOD_REGIONU,
+        KOD_TOWARU
+    ORDER BY
+        COUNT(*)
+    DESC
+) AS T1
+GROUP BY
+    NAZWA_REGIONU;
