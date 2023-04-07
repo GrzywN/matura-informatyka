@@ -2,7 +2,7 @@ numbers = []
 with open("liczby_h.txt", "r") as f:
     for line in f:
         line = line.strip()
-        numbers.append(int(line))
+        numbers.append(int(line, 16))
 
 numbers_and_num_of_bits = dict()
 for num in numbers:
