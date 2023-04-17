@@ -1,15 +1,19 @@
-def binary_search(liczby: list[int],  cel: int) -> int:
-    lewo, prawo = 0, len(liczby)
+def binary_search(nums: list[int],  target: int) -> int:
+    low, high = 0, len(nums) - 1
 
-    while lewo < prawo:
-        srodek = (lewo + prawo) // 2
+    while low <= high:
+        mid = (low + high) // 2
+        guess = nums[mid]
 
-        if liczby[srodek] < cel:
-            lewo = srodek + 1
+        if guess == target:
+            return mid
+
+        if guess < target:
+            low = mid + 1
         else:
-            prawo = srodek
+            high = mid -1
 
-    return lewo
+    return None
 
 
 # Złożoność czasowa - O(log n)

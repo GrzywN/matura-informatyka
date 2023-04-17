@@ -1,12 +1,9 @@
-from math import sqrt
-
-
 def czy_pierwsza(liczba: int) -> bool:
     if liczba < 2:
         return False
 
     i = 2
-    while i <= sqrt(liczba):
+    while i <= liczba ** 0.5:
         if liczba % i == 0:
             return False
         i += 1
