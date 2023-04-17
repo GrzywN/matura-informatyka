@@ -6,7 +6,7 @@ def simple_sort(tab: list[int], n: int) -> None:
                 tab[i] = tab[j]
                 tab[j] = tmp
 
-
+# Mniejszy (<) to rosnąco, Większy (>) malejąco.
 # Złożoność czasowa - O(n^2)
 # Złożoność pamięciowa - O(1)
 

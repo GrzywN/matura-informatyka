@@ -27,4 +27,5 @@ def selection_sort(arr: list[int]) -> list[int]:
       new_arr.append(arr.pop(smallest))
   return new_arr
 
+
 print(selection_sort([5, 3, 6, 2, 10]))
