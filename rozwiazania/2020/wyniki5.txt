@@ -1,0 +1,48 @@
+5.1
+ Rodzina 	Ile jezyków należy 	
+nigero-kongijska 	137
+austronezyjska 	65
+indoeuropejska 	63
+sino-tybetanska 	43
+nilo-saharyjska 	30
+afroazjatycka 	28
+dajska 	23
+austroazjatycka 	20
+turecka 	15
+drawidyjska 	15
+jezyk izolowany 	8
+polnocno-wschodniokaukaska 	7
+otomang 	7
+mongolska 	5
+majanska 	5
+hmong-mien 	4
+abchasko-adygijska 	3
+uralska 	3
+na-dene 	1
+algijska 	1
+keczua 	1
+tungusko-mandzurska 	1
+tupi 	1
+uto-aztecka 	1
+
+5.2
+Liczba języków nieurzędowych 	
+506
+
+5.3
+Jezyk 	Na ilu kontynentach 	
+angielski 	4
+arabski 	5
+gudzaracki 	4
+tamilski 	4
+
+5.4
+ Jezyk 	Rodzina 	Łączna liczba użytkowników 	
+mandarynski 	sino-tybetanska 	2
+arabski 	afroazjatycka 	2
+wietnamski 	austroazjatycka 	1
+nahuatl 	uto-aztecka 	1
+koreanski 	jezyk izolowany 	1
+tagalog 	austronezyjska 	1
+
+5.5

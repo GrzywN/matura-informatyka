@@ -1,0 +1,52 @@
+6.1
+T4	32	905 ton
+
+6.2
+22
+
+6.3
+2016-02-01 - najwięcej: T2 - 48 ton, najmniej T4 - 24 tony
+2018-08-01 - najwięcej: T4 - 65 ton, najmniej T1 - 3  tony
+
+6.4
+Data	Liczba załadunków	Liczba wyładunków
+2016		
+sty	2	1
+lut	1	0
+mar	0	1
+kwi	2	0
+cze	1	0
+lip	2	0
+sie	0	1
+wrz	1	1
+lis	1	0
+2017		
+sty	1	1
+lut	0	1
+mar	1	0
+kwi	1	0
+maj	1	1
+cze	1	0
+lip	1	0
+sie	1	1
+paź	0	1
+lis	1	1
+2018		
+sty	1	1
+lut	1	0
+mar	0	1
+kwi	1	0
+cze	2	0
+lip	1	0
+sie	1	1
+wrz	0	1
+paź	1	0
+lis	1	1
+gru	0	1
+Suma końcowa	27	16
+
+6.5
+a) 18 grudnia 2018 roku miał 545 844
+Najwięcej dnia 24.11.2018 - miał 552575.
+
+b) 5 919

@@ -1,0 +1,57 @@
+5.1
+SELECT Rodzina, COUNT(*) AS "Ile jezyków należy" FROM jezyki GROUP BY Rodzina ORDER BY COUNT(*) DESC;
+
+5.2
+SELECT
+    COUNT(DISTINCT jezyki.Jezyk) AS "Liczba języków nieurzędowych"
+FROM
+    jezyki
+LEFT JOIN uzytkownicy ON uzytkownicy.Jezyk = jezyki.Jezyk
+LEFT JOIN panstwa ON panstwa.Panstwo = uzytkownicy.Panstwo
+WHERE
+    uzytkownicy.Jezyk NOT IN(
+    SELECT DISTINCT
+        Jezyk
+    FROM
+        uzytkownicy
+    WHERE
+        Urzedowy LIKE "tak"
+);
+
+5.3
+SELECT
+    Jezyk,
+    COUNT(DISTINCT panstwa.Kontynent) AS "Na ilu kontynentach"
+FROM
+    uzytkownicy
+JOIN panstwa ON uzytkownicy.Panstwo = panstwa.Panstwo
+GROUP BY
+    Uzytkownicy.Jezyk
+HAVING
+    COUNT(DISTINCT panstwa.Kontynent) >= 4;
+
+5.4
+Rozwiązanie za 2/3 punktów, chyba nie do końca poprawnie zlicza Łączną liczbę użytkowników
+
+SELECT
+    uzytkownicy.Jezyk,
+    jezyki.Rodzina,
+    SUM(uzytkownicy.Uzytkownicy) AS "Łączna liczba użytkowników"
+FROM
+    uzytkownicy
+JOIN panstwa ON uzytkownicy.Panstwo = panstwa.Panstwo
+JOIN jezyki ON uzytkownicy.Jezyk = jezyki.Jezyk
+WHERE
+    rodzina != "indoeuropejska" AND(
+        Kontynent LIKE "Ameryka Polnocna" OR Kontynent LIKE "Ameryka Poludniowa"
+    )
+GROUP BY
+    uzytkownicy.Jezyk,
+    jezyki.Rodzina
+ORDER BY
+    SUM(uzytkownicy.Uzytkownicy)
+DESC
+LIMIT 6;
+
+5.5
+Za trudne, koniec czasu
