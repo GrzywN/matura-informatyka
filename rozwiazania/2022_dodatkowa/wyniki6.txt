@@ -1,0 +1,67 @@
+9/12pkt
+
+6.1 1/1pkt
+109
+
+6.2 2/2pkt
+Miasto 	COUNT(id_meczu) Malejąco 1
+Wiralow 	41
+Kukurykow 	39
+Szymbark 	32
+Preziowo 	30
+Bialowo 	21
+Gorkowo 	18
+Kielkowo 	17
+Radelko 	15
+Sadelko 	15
+Licowo 	15
+Koszalkowo 	15
+Orecin 	14
+Barylkowo 	14
+Warkowo 	13
+Rezkow 	13
+Lewkowo 	12
+
+6.3 3/3pkt lub 2/3pkt (klucz niezgodny z pytaniem, jest napisane, że trzeba dać imiona i nazwiska a w kluczu że też liczbe meczy)
+ Imie 	Nazwisko
+Szymon 	Rutkowski
+Natalia 	Jankowska
+Kamila 	Majewska
+Franciszek 	Dudek
+Monika 	Kowalczyk
+Barbara 	Kaczmarek
+Katarzyna 	Olszewska
+
+6.4 0/3pkt zła odpowiedź
+ Imie 	Nazwisko
+Agnieszka 	Wieczorek
+Anna 	Nowak
+Barbara 	Kaczmarek
+Filip 	Adamczyk
+Franciszek 	Dudek
+Jan 	Malinowski
+Kamila 	Majewska
+Katarzyna 	Olszewska
+Marcin 	Piotrowski
+Marta 	Kowalska
+Monika 	Kowalczyk
+Natalia 	Jankowska
+Piotr 	Lewandowski
+Szymon 	Rutkowski
+Zbigniew 	Michalak
+Zofia 	Grabowska
+
+6.5 3/3pkt
+Nazwa 	Miasto 	ile_przegranych_spotkan 	ile_wygranych_spotkan
+Sfinks 	Szymbark 	7 	9
+Zenit 	Licowo 	7 	8
+Victoria 	Radelko 	5 	10
+Zjednoczeni 	Kukurykow 	8 	10
+Olimpia 	Orecin 	5 	9
+Stolar 	Wiralow 	9 	11
+Astecja 	Rezkow 	3 	10
+Bradownia 	Preziowo 	9 	9
+Spirca 	Lewkowo 	6 	6
+Huraganer 	Szymbark 	8 	8
+Waleczni 	Preziowo 	5 	7
+Libero 	Warkowo 	5 	8

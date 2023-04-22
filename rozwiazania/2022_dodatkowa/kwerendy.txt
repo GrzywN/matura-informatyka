@@ -1,0 +1,60 @@
+CREATE VIEW polaczone_tabele AS SELECT
+    mecze.id_meczu AS id_meczu,
+    kluby.Id_klubu AS id_klubu,
+    sedziowie.Id_sedziego AS id_sedziego,
+    Miasto,
+    Nazwa,
+    DATA,
+    Sety_przegrane,
+    Sety_wygrane,
+    Imie,
+    Nazwisko
+FROM
+    mecze
+JOIN kluby ON mecze.Id_klubu = kluby.Id_klubu
+JOIN sedziowie ON mecze.Id_sedziego = sedziowie.Id_sedziego;
+
+6.1)
+SELECT COUNT(*) FROM polaczone_tabele WHERE Sety_wygrane + Sety_przegrane = 5;
+
+6.2)
+SELECT Miasto, COUNT(id_meczu) FROM polaczone_tabele GROUP BY Miasto ORDER BY COUNT(id_meczu) DESC;
+
+6.3)
+CREATE VIEW Spotkania_sedziow AS (
+    SELECT
+        id_sedziego,
+        COUNT(id_meczu)
+    FROM
+        polaczone_tabele
+    GROUP BY
+        id_sedziego
+)
+
+CREATE VIEW srednia_spotkan_sedziow AS SELECT AVG(id_meczu) FROM `spotkania_sedziow`;
+
+SELECT Imie, Nazwisko FROM spotkania_sedziow JOIN sedziowie ON spotkania_sedziow.id_sedziego = sedziowie.Id_sedziego WHERE id_meczu > (SELECT * FROM srednia_spotkan_sedziow);
+
+6.4)
+SELECT Imie, Nazwisko FROM polaczone_tabele WHERE Miasto NOT IN ("Licowo", "Szymbark") AND Data BETWEEN "2019-10-15" AND "2019-12-15" GROUP BY CONCAT(Imie, Nazwisko);
+
+```sql
+-- prawidłowe
+
+SELECT Imie, Nazwisko FROM polaczone_tabele WHERE id_sedziego NOT IN (SELECT id_sedziego FROM polaczone_tabele WHERE Miasto IN ("Licowo", "Szymbark") AND Data BETWEEN "2019-10-15" AND "2019-12-15" GROUP BY id_sedziego) GROUP BY id_sedziego;
+```
+
+
+6.5)
+CREATE VIEW wygrane_spotkania AS SELECT *, COUNT(id_meczu) AS ile_wygranych_spotkan FROM polaczone_tabele WHERE Sety_wygrane > Sety_przegrane GROUP BY id_klubu;
+CREATE VIEW przegrane_spotkania AS SELECT *, COUNT(id_meczu) AS ile_przegranych_spotkan FROM polaczone_tabele WHERE Sety_wygrane < Sety_przegrane GROUP BY id_klubu;
+
+SELECT
+    wygrane_spotkania.Nazwa AS Nazwa,
+    wygrane_spotkania.Miasto AS Miasto,
+    ile_przegranych_spotkan,
+    ile_wygranych_spotkan
+FROM
+    wygrane_spotkania
+JOIN przegrane_spotkania ON wygrane_spotkania.id_klubu = przegrane_spotkania.id_klubu
+WHERE ile_wygranych_spotkan >= ile_przegranych_spotkan;
