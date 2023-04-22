@@ -1,0 +1,42 @@
+CREATE VIEW polaczone_tabele AS SELECT
+	data,
+    id,
+    koncerty.id_zespolu AS id_zespolu,
+    koncerty.kod_miasta AS kod_miasta,
+    miasto,
+    wojewodztwo,
+    liczba_artystow,
+    nazwa
+FROM
+    koncerty
+JOIN zespoly ON koncerty.id_zespolu = zespoly.id_zespolu
+JOIN miasta ON koncerty.kod_miasta = miasta.kod_miasta;
+
+6.1
+SELECT COUNT(*) FROM polaczone_tabele WHERE MONTH(data) = 7;
+
+6.2
+SELECT miasto, nazwa, COUNT(DISTINCT id_zespolu) FROM `polaczone_tabele` GROUP BY kod_miasta ORDER BY COUNT(DISTINCT id_zespolu) DESC;
+
+6.3
+CREATE VIEW miasta_z_liczba_koncertow AS SELECT miasto, kod_miasta, wojewodztwo, COUNT(id) AS ile_koncertow FROM polaczone_tabele GROUP BY miasto;
+SELECT wojewodztwo, ROUND(AVG(ile_koncertow), 2) FROM `miasta_z_liczba_koncertow` GROUP BY wojewodztwo ORDER BY AVG(ile_koncertow) DESC;
+
+6.4
+CREATE VIEW zespoly_koncertujace_w_okresie AS SELECT id_zespolu FROM polaczone_tabele WHERE data BETWEEN "2017-07-20" AND "2017-07-25";
+SELECT DISTINCT nazwa FROM polaczone_tabele WHERE id_zespolu NOT IN (SELECT * FROM zespoly_koncertujace_w_okresie);
+
+6.5
+CREATE VIEW zespoly_koncertujace_w_weekendy AS SELECT nazwa, id_zespolu, COUNT(*) AS ile_razy_w_weekendy FROM `polaczone_tabele` WHERE WEEKDAY(data) = 6 OR WEEKDAY(data) = 5 GROUP BY id_zespolu;
+CREATE VIEW zespoly_koncertujace_w_tygodniu AS SELECT nazwa, id_zespolu, COUNT(*) AS ile_razy_w_powszednie FROM `polaczone_tabele` WHERE WEEKDAY(data) < 5 GROUP BY id_zespolu;
+
+SELECT
+    zespoly.nazwa AS nazwa,
+    ile_razy_w_weekendy,
+    ile_razy_w_powszednie
+FROM
+    zespoly
+JOIN zespoly_koncertujace_w_weekendy ON zespoly.id_zespolu = zespoly_koncertujace_w_weekendy.id_zespolu
+JOIN zespoly_koncertujace_w_tygodniu ON zespoly.id_zespolu = zespoly_koncertujace_w_tygodniu.id_zespolu
+WHERE
+    ile_razy_w_weekendy > ile_razy_w_powszednie;
